@@ -24,7 +24,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-
 .nav-grid { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 20px; }
 table.st { width: 100%; border-collapse: collapse; font-size: .875rem; background: white; }
 table.st thead th { background: #1e3a5f; color: white; padding: 11px 14px;
-                    text-align: left; white-space: nowrap; }
+                    text-align: left; white-space: nowrap; cursor: pointer; }
+table.st thead th:hover { background: #2d5086; }
 table.st tbody tr { border-bottom: 1px solid #f1f5f9; }
 table.st tbody tr:hover { background: #f8fafc; }
 table.st tbody tr:last-child { border-bottom: none; }
@@ -911,88 +912,53 @@ table.st td { padding: 10px 14px; vertical-align: middle; }
   </div>
   <div class="cards-row">
     <div style="background:white;border-radius:12px;padding:18px 22px;flex:1;min-width:110px;box-shadow:0 1px 4px rgba(0,0,0,.07);border-top:4px solid #7c3aed">
-  <div style="font-size:2rem;font-weight:800;color:#7c3aed;line-height:1.1">2</div>
-  <div style="font-size:.72rem;color:#64748b;margin-top:4px;text-transform:uppercase;letter-spacing:.05em">Currently at K Level</div>
+  <div style="font-size:2rem;font-weight:800;color:#7c3aed;line-height:1.1">7</div>
+  <div style="font-size:.72rem;color:#64748b;margin-top:4px;text-transform:uppercase;letter-spacing:.05em">With Test Data This Year</div>
 </div>
-    <div style="background:white;border-radius:12px;padding:18px 22px;flex:1;min-width:110px;box-shadow:0 1px 4px rgba(0,0,0,.07);border-top:4px solid #2563eb">
-  <div style="font-size:2rem;font-weight:800;color:#2563eb;line-height:1.1">6</div>
-  <div style="font-size:.72rem;color:#64748b;margin-top:4px;text-transform:uppercase;letter-spacing:.05em">Currently at 1st Level</div>
-</div>
-    <div style="background:white;border-radius:12px;padding:18px 22px;flex:1;min-width:110px;box-shadow:0 1px 4px rgba(0,0,0,.07);border-top:4px solid #059669">
-  <div style="font-size:2rem;font-weight:800;color:#059669;line-height:1.1">0</div>
-  <div style="font-size:.72rem;color:#64748b;margin-top:4px;text-transform:uppercase;letter-spacing:.05em">Currently at 2nd Level</div>
+    <div style="background:white;border-radius:12px;padding:18px 22px;flex:1;min-width:110px;box-shadow:0 1px 4px rgba(0,0,0,.07);border-top:4px solid #6b7280">
+  <div style="font-size:2rem;font-weight:800;color:#6b7280;line-height:1.1">1</div>
+  <div style="font-size:.72rem;color:#64748b;margin-top:4px;text-transform:uppercase;letter-spacing:.05em">No Tests on Record</div>
 </div>
   </div>
-
-  <div style="display:flex;align-items:center;gap:12px;margin:28px 0 14px">
-  <div style="width:40px;height:40px;border-radius:50%;background:#ede9fe;display:flex;align-items:center;justify-content:center;font-size:1.2rem">&#127891;</div>
-  <div>
-    <div style="font-size:1.05rem;font-weight:700;color:#1e293b">Currently at Kindergarten Level</div>
-    <div style="font-size:.8rem;color:#64748b">2 students</div>
-  </div></div>
   <div style="overflow:auto;border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,.08)">
 <table class="st">
   <thead><tr>
-    <th>Student Name</th><th>Campus</th><th style="text-align:center">Current Mastery Level</th>
+    <th>Student Name</th><th>Campus</th><th style="text-align:center">Highest Mastered Grade (This Year)</th>
   </tr></thead>
   <tbody><tr>
           <td>Jules Nevraumont</td>
           <td>GT Anywhere</td>
-          <td style="text-align:center">K</td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No tests on record</span></td>
         </tr><tr>
-          <td>Enzo Spano</td>
-          <td>Immaculate Academy</td>
-          <td style="text-align:center">K</td>
-        </tr></tbody>
-</table></div>
-
-  <hr class="divider">
-  <div style="display:flex;align-items:center;gap:12px;margin:28px 0 14px">
-  <div style="width:40px;height:40px;border-radius:50%;background:#dbeafe;display:flex;align-items:center;justify-content:center;font-size:1.2rem">&#127891;</div>
-  <div>
-    <div style="font-size:1.05rem;font-weight:700;color:#1e293b">Currently at 1st Grade Level</div>
-    <div style="font-size:.8rem;color:#64748b">6 students</div>
-  </div></div>
-  <div style="overflow:auto;border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,.08)">
-<table class="st">
-  <thead><tr>
-    <th>Student Name</th><th>Campus</th><th style="text-align:center">Current Mastery Level</th>
-  </tr></thead>
-  <tbody><tr>
           <td>Kin Yu Wong</td>
           <td>GT Anywhere</td>
-          <td style="text-align:center">1st</td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td>
         </tr><tr>
           <td>Owen Gozun</td>
           <td>GT Anywhere</td>
-          <td style="text-align:center">1st</td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td>
         </tr><tr>
           <td>Thaddeus Herrera</td>
           <td>GT Anywhere</td>
-          <td style="text-align:center">1st</td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td>
+        </tr><tr>
+          <td>Enzo Spano</td>
+          <td>Immaculate Academy</td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td>
         </tr><tr>
           <td>Kayley Jaeger</td>
           <td>Immaculate Academy</td>
-          <td style="text-align:center">1st</td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td>
         </tr><tr>
           <td>Isabella Thomas</td>
           <td>Vita High School</td>
-          <td style="text-align:center">1st</td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td>
         </tr><tr>
           <td>Yember Aguilera Ramirez</td>
           <td>Vita High School</td>
-          <td style="text-align:center">1st</td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td>
         </tr></tbody>
 </table></div>
-
-  <hr class="divider">
-  <div style="display:flex;align-items:center;gap:12px;margin:28px 0 14px">
-  <div style="width:40px;height:40px;border-radius:50%;background:#d1fae5;display:flex;align-items:center;justify-content:center;font-size:1.2rem">&#127891;</div>
-  <div>
-    <div style="font-size:1.05rem;font-weight:700;color:#1e293b">Currently at 2nd Grade Level</div>
-    <div style="font-size:.8rem;color:#64748b">0 students</div>
-  </div></div>
-  <p style="color:#9ca3af;padding:20px;text-align:center">No students in this group.</p>
 </div>
 </div>
 <div id="page-new-enroll" class="page">
@@ -1372,7 +1338,57 @@ function showPage(id) {
   var el = document.getElementById(id);
   if (el) { el.classList.add('active'); window.scrollTo(0,0); }
 }
-document.addEventListener('DOMContentLoaded', function(){ showPage('home'); });
+
+function initSortableTables() {
+  document.querySelectorAll('table.st').forEach(function(table) {
+    var headers = table.querySelectorAll('thead th');
+    headers.forEach(function(th, colIdx) {
+      if (th._sortInit) return;
+      th._sortInit = true;
+      th._sortDir = 0;
+      th.style.cursor = 'pointer';
+      th.style.userSelect = 'none';
+      th.title = 'Click to sort';
+      th.addEventListener('click', function() {
+        // reset other headers in this table
+        headers.forEach(function(h) {
+          if (h !== th) {
+            h._sortDir = 0;
+            var ind = h.querySelector('.sort-ind');
+            if (ind) ind.textContent = '';
+          }
+        });
+        th._sortDir = th._sortDir === 1 ? -1 : 1;
+        var ind = th.querySelector('.sort-ind');
+        if (!ind) {
+          ind = document.createElement('span');
+          ind.className = 'sort-ind';
+          ind.style.cssText = 'margin-left:5px;font-size:.65rem;opacity:.75';
+          th.appendChild(ind);
+        }
+        ind.textContent = th._sortDir === 1 ? ' ▲' : ' ▼';
+        var tbody = table.querySelector('tbody');
+        var rows = Array.from(tbody.querySelectorAll('tr'));
+        var dir = th._sortDir;
+        rows.sort(function(a, b) {
+          var aText = (a.cells[colIdx] ? a.cells[colIdx].textContent : '').trim();
+          var bText = (b.cells[colIdx] ? b.cells[colIdx].textContent : '').trim();
+          // numeric sort if both parse as numbers
+          var aNum = parseFloat(aText.replace(/[^0-9.+-]/g, ''));
+          var bNum = parseFloat(bText.replace(/[^0-9.+-]/g, ''));
+          if (!isNaN(aNum) && !isNaN(bNum)) return dir * (aNum - bNum);
+          return dir * aText.toLowerCase().localeCompare(bText.toLowerCase());
+        });
+        rows.forEach(function(row) { tbody.appendChild(row); });
+      });
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  showPage('home');
+  initSortableTables();
+});
 </script>
 </body>
 </html>
