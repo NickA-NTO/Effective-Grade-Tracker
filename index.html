@@ -1329,10 +1329,16 @@ function initSortableTables() {
         rows.sort(function(a, b) {
           var aText = (a.cells[colIdx] ? a.cells[colIdx].textContent : '').trim();
           var bText = (b.cells[colIdx] ? b.cells[colIdx].textContent : '').trim();
-          // numeric sort if both parse as numbers
-          var aNum = parseFloat(aText.replace(/[^0-9.+-]/g, ''));
-          var bNum = parseFloat(bText.replace(/[^0-9.+-]/g, ''));
-          if (!isNaN(aNum) && !isNaN(bNum)) return dir * (aNum - bNum);
+          // date sort: detect "Mon DD, YYYY" patterns (e.g. "Jan 5, 2026")
+          var dateRe = /^[A-Za-z]{3}\s+\d{1,2},\s*\d{4}$/;
+          if (dateRe.test(aText) && dateRe.test(bText)) {
+            var aD = new Date(aText); var bD = new Date(bText);
+            if (!isNaN(aD) && !isNaN(bD)) return dir * (aD - bD);
+          }
+          // numeric sort if both parse as pure numbers
+          var aNum = parseFloat(aText.replace(/[^0-9.]/g, ''));
+          var bNum = parseFloat(bText.replace(/[^0-9.]/g, ''));
+          if (!isNaN(aNum) && !isNaN(bNum) && aText.replace(/[^0-9.]/g,'') !== '' && bText.replace(/[^0-9.]/g,'') !== '') return dir * (aNum - bNum);
           return dir * aText.toLowerCase().localeCompare(bText.toLowerCase());
         });
         rows.forEach(function(row) { tbody.appendChild(row); });
