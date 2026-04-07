@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>K&ndash;2 Language Report &mdash; SY 2025-26</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+       background: #f1f5f9; color: #1e293b; }
+.page { display: none; }
+.page.active { display: block; }
+.site-header { background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+               color: white; padding: 20px 32px; }
+.site-header h1 { font-size: 1.5rem; font-weight: 700; }
+.site-header .sub { font-size: .85rem; opacity: .8; margin-top: 4px; }
+.back-btn { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,.15);
+            border: 1px solid rgba(255,255,255,.3); color: white; padding: 6px 14px;
+            border-radius: 8px; cursor: pointer; font-size: .85rem; margin-top: 10px;
+            transition: background .15s; font-family: inherit; }
+.back-btn:hover { background: rgba(255,255,255,.25); }
+.content { padding: 24px 32px 40px; }
+.cards-row { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 24px; }
+.nav-grid { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 20px; }
+table.st { width: 100%; border-collapse: collapse; font-size: .875rem; background: white; }
+table.st thead th { background: #1e3a5f; color: white; padding: 11px 14px;
+                    text-align: left; white-space: nowrap; cursor: pointer; }
+table.st thead th:hover { background: #2d5086; }
+table.st tbody tr { border-bottom: 1px solid #f1f5f9; }
+table.st tbody tr:hover { background: #f8fafc; }
+table.st tbody tr:last-child { border-bottom: none; }
+table.st td { padding: 10px 14px; vertical-align: middle; }
+.divider { border: none; border-top: 2px solid #e2e8f0; margin: 28px 0; }
+.info-note { background: #fff7ed; border-left: 3px solid #f59e0b; border-radius: 6px;
+             padding: 10px 16px; font-size: .82rem; color: #92400e; line-height: 1.5; margin-bottom: 20px; }
+.danger-note { background: #fef2f2; border-left: 3px solid #ef4444; border-radius: 6px;
+               padding: 10px 16px; font-size: .82rem; color: #991b1b; line-height: 1.5; margin-bottom: 20px; }
+@media print {
+  body { background: white; }
+  .back-btn, .nav-grid button { display: none; }
+  table.st { box-shadow: none; }
+  table.st thead th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<div id="home" class="page active">
+<div class="site-header">
+  <h1>K&ndash;2 Language: Effective Grades Report</h1>
+  <div class="sub">School Year 2025&ndash;26 &nbsp;&bull;&nbsp; EOY Target: June 5, 2026</div>
+</div>
+<div class="content">
+  <div class="cards-row">
+    <div style="background:white;border-radius:12px;padding:18px 22px;flex:1;min-width:110px;box-shadow:0 1px 4px rgba(0,0,0,.07);border-top:4px solid #2563eb">
+  <div style="font-size:2rem;font-weight:800;color:#2563eb;line-height:1.1">195</div>
+  <div style="font-size:.72rem;color:#64748b;margin-top:4px;text-transform:uppercase;letter-spacing:.05em">Students with Effective Grade Data</div>
+</div>
+    <div style="background:white;border-radius:12px;padding:18px 22px;flex:1;min-width:110px;box-shadow:0 1px 4px rgba(0,0,0,.07);border-top:4px solid #16a34a">
+  <div style="font-size:2rem;font-weight:800;color:#16a34a;line-height:1.1">79</div>
+  <div style="font-size:.72rem;color:#64748b;margin-top:4px;text-transform:uppercase;letter-spacing:.05em">Passed 2+ Grades</div>
+</div>
+    <div style="background:white;border-radius:12px;padding:18px 22px;flex:1;min-width:110px;box-shadow:0 1px 4px rgba(0,0,0,.07);border-top:4px solid #d97706">
+  <div style="font-size:2rem;font-weight:800;color:#d97706;line-height:1.1">50</div>
+  <div style="font-size:.72rem;color:#64748b;margin-top:4px;text-transform:uppercase;letter-spacing:.05em">Passed 1 Grade</div>
+</div>
+    <div style="background:white;border-radius:12px;padding:18px 22px;flex:1;min-width:110px;box-shadow:0 1px 4px rgba(0,0,0,.07);border-top:4px solid #dc2626">
+  <div style="font-size:2rem;font-weight:800;color:#dc2626;line-height:1.1">40</div>
+  <div style="font-size:.72rem;color:#64748b;margin-top:4px;text-transform:uppercase;letter-spacing:.05em">Not Yet Mastered</div>
+</div>
+    <div style="background:white;border-radius:12px;padding:18px 22px;flex:1;min-width:110px;box-shadow:0 1px 4px rgba(0,0,0,.07);border-top:4px solid #d97706">
+  <div style="font-size:2rem;font-weight:800;color:#d97706;line-height:1.1">N/A</div>
+  <div style="font-size:.72rem;color:#64748b;margin-top:4px;text-transform:uppercase;letter-spacing:.05em">Avg XP Until Next Test</div>
+</div>
+    <div style="background:white;border-radius:12px;padding:18px 22px;flex:1;min-width:110px;box-shadow:0 1px 4px rgba(0,0,0,.07);border-top:4px solid #6b7280">
+  <div style="font-size:2rem;font-weight:800;color:#6b7280;line-height:1.1">62</div>
+  <div style="font-size:.72rem;color:#64748b;margin-top:4px;text-transform:uppercase;letter-spacing:.05em">Missing Eff. Grade</div>
+</div>
+    <div style="background:white;border-radius:12px;padding:18px 22px;flex:1;min-width:110px;box-shadow:0 1px 4px rgba(0,0,0,.07);border-top:4px solid #0891b2">
+  <div style="font-size:2rem;font-weight:800;color:#0891b2;line-height:1.1">26</div>
+  <div style="font-size:.72rem;color:#64748b;margin-top:4px;text-transform:uppercase;letter-spacing:.05em">New Enrollments (Jan 5+)</div>
+</div>
+  </div>
+  <div style="font-size:1rem;font-weight:600;color:#475569;margin-bottom:12px;text-transform:uppercase;letter-spacing:.05em;font-size:.8rem">View Details</div>
+  <div class="nav-grid">
+    <button onclick="showPage('page-passed2')" style="
+        background:#f0fdf4;border:2px solid #86efac;border-radius:14px;
+        padding:24px 20px;cursor:pointer;text-align:left;transition:transform .1s,box-shadow .1s;
+        flex:1;min-width:200px;font-family:inherit"
+      onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,.12)'"
+      onmouseout="this.style.transform='';this.style.boxShadow=''">
+      <div style="font-size:2rem;margin-bottom:8px">&#127881;</div>
+      <div style="font-size:1.1rem;font-weight:700;color:#15803d;margin-bottom:6px">Mastered 2 Effective Grades</div>
+      <div style="font-size:2rem;font-weight:800;color:#15803d">79</div>
+      <div style="font-size:.75rem;color:#15803d;opacity:.7;margin-top:2px">students</div>
+    </button>
+    <button onclick="showPage('page-passed1')" style="
+        background:#fffbeb;border:2px solid #fcd34d;border-radius:14px;
+        padding:24px 20px;cursor:pointer;text-align:left;transition:transform .1s,box-shadow .1s;
+        flex:1;min-width:200px;font-family:inherit"
+      onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,.12)'"
+      onmouseout="this.style.transform='';this.style.boxShadow=''">
+      <div style="font-size:2rem;margin-bottom:8px">&#9889;</div>
+      <div style="font-size:1.1rem;font-weight:700;color:#b45309;margin-bottom:6px">Mastered 1 Effective Grade</div>
+      <div style="font-size:2rem;font-weight:800;color:#b45309">50</div>
+      <div style="font-size:.75rem;color:#b45309;opacity:.7;margin-top:2px">students</div>
+    </button>
+    <button onclick="showPage('page-notmast')" style="
+        background:#fff1f2;border:2px solid #fca5a5;border-radius:14px;
+        padding:24px 20px;cursor:pointer;text-align:left;transition:transform .1s,box-shadow .1s;
+        flex:1;min-width:200px;font-family:inherit"
+      onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,.12)'"
+      onmouseout="this.style.transform='';this.style.boxShadow=''">
+      <div style="font-size:2rem;margin-bottom:8px">&#128073;</div>
+      <div style="font-size:1.1rem;font-weight:700;color:#b91c1c;margin-bottom:6px">Not Yet Mastered an Effective Grade</div>
+      <div style="font-size:2rem;font-weight:800;color:#b91c1c">40</div>
+      <div style="font-size:.75rem;color:#b91c1c;opacity:.7;margin-top:2px">students</div>
+    </button>
+    <button onclick="showPage('page-missing')" style="
+        background:#f8fafc;border:2px solid #cbd5e1;border-radius:14px;
+        padding:24px 20px;cursor:pointer;text-align:left;transition:transform .1s,box-shadow .1s;
+        flex:1;min-width:200px;font-family:inherit"
+      onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,.12)'"
+      onmouseout="this.style.transform='';this.style.boxShadow=''">
+      <div style="font-size:2rem;margin-bottom:8px">&#10067;</div>
+      <div style="font-size:1.1rem;font-weight:700;color:#374151;margin-bottom:6px">Missing Effective Grade</div>
+      <div style="font-size:2rem;font-weight:800;color:#374151">62</div>
+      <div style="font-size:.75rem;color:#374151;opacity:.7;margin-top:2px">students</div>
+    </button>
+    <button onclick="showPage('page-new-enroll')" style="
+        background:#ecfeff;border:2px solid #67e8f9;border-radius:14px;
+        padding:24px 20px;cursor:pointer;text-align:left;transition:transform .1s,box-shadow .1s;
+        flex:1;min-width:200px;font-family:inherit"
+      onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,.12)'"
+      onmouseout="this.style.transform='';this.style.boxShadow=''">
+      <div style="font-size:2rem;margin-bottom:8px">&#127381;</div>
+      <div style="font-size:1.1rem;font-weight:700;color:#0e7490;margin-bottom:6px">New Enrollments</div>
+      <div style="font-size:2rem;font-weight:800;color:#0e7490">26</div>
+      <div style="font-size:.75rem;color:#0e7490;opacity:.7;margin-top:2px">students</div>
+    </button>
+  </div>
+
+  <div style="margin-top:40px">
+    <div style="font-size:.8rem;font-weight:600;color:#475569;text-transform:uppercase;letter-spacing:.05em;margin-bottom:16px">Progress Over Time</div>
+    <div style="display:flex;gap:20px;flex-wrap:wrap">
+
+      <div style="flex:1;min-width:340px;background:white;border:1px solid #e2e8f0;border-radius:14px;padding:22px 24px 16px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
+        <div style="font-size:.95rem;font-weight:700;color:#0f172a;margin-bottom:2px">Students Passing 2+ Effective Grades</div>
+        <div style="font-size:.75rem;color:#94a3b8;margin-bottom:14px">Cumulative count since Aug 13, 2025</div>
+        <div style="position:relative;height:200px"><canvas id="chartGP2Home"></canvas></div>
+        <div style="display:flex;gap:20px;margin-top:12px;border-top:1px solid #f1f5f9;padding-top:10px">
+          <div><div style="font-size:1.3rem;font-weight:800;color:#16a34a;line-height:1">79</div><div style="font-size:.7rem;color:#94a3b8;margin-top:2px">as of today</div></div>
+          <div><div style="font-size:1.3rem;font-weight:800;color:#16a34a;line-height:1">0</div><div style="font-size:.7rem;color:#94a3b8;margin-top:2px">at start of year</div></div>
+        </div>
+      </div>
+
+      <div style="flex:1;min-width:340px;background:white;border:1px solid #e2e8f0;border-radius:14px;padding:22px 24px 16px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
+        <div style="font-size:.95rem;font-weight:700;color:#0f172a;margin-bottom:2px">Students Holding at Exactly 1 EG Passed</div>
+        <div style="font-size:.75rem;color:#94a3b8;margin-bottom:14px">Rises as students enter Passed 1, falls as they graduate to 2+</div>
+        <div style="position:relative;height:200px"><canvas id="chartP1Home"></canvas></div>
+        <div style="display:flex;gap:20px;margin-top:12px;border-top:1px solid #f1f5f9;padding-top:10px">
+          <div><div style="font-size:1.3rem;font-weight:800;color:#d97706;line-height:1">50</div><div style="font-size:.7rem;color:#94a3b8;margin-top:2px">as of today</div></div>
+          <div><div style="font-size:1.3rem;font-weight:800;color:#d97706;line-height:1">57</div><div style="font-size:.7rem;color:#94a3b8;margin-top:2px">peak (Feb 2)</div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>
+<div id="page-passed2" class="page">
+<div class="site-header">
+  <button class="back-btn" onclick="showPage('home')">&#8592; Back to Home</button>
+  <h1 style="margin-top:10px">&#127881; Mastered 2+ Effective Grades</h1>
+  <div class="sub">79 students have passed 2 or more effective grade levels this school year</div>
+</div>
+<div class="content">
+  <div class="info-note">
+    &#10003; These students have surpassed their MAP-derived starting grade by 2 or more full grade levels.
+    No on-track projection is needed &mdash; they have already met the goal.
+  </div>
+  <div style="overflow:auto;border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,.08)">
+<table class="st">
+  <thead><tr>
+    <th>Student Name</th><th>Campus</th><th>Effective Grade</th><th>Highest Mastered Grade</th>
+    <th>EGs Passed This Year</th>
+  </tr></thead>
+  <tbody><tr>
+          <td>Ada Cone</td>
+          <td>Alpha Anywhere Center</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="font-weight:600">3rd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">3 &#10003;</span></td></tr><tr>
+          <td>Alice Grimm</td>
+          <td>Alpha Anywhere Center</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Annabelle Lembo</td>
+          <td>Alpha Anywhere Center</td>
+          <td style="text-align:center"><span style="background:#059669;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">2nd</span></td>
+          <td style="text-align:center"><span style="font-weight:600">3rd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Blake Richheimer</td>
+          <td>Alpha Anywhere Center</td>
+          <td style="text-align:center"><span style="background:#059669;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">2nd</span></td>
+          <td style="text-align:center"><span style="font-weight:600">3rd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Lucian McDavid</td>
+          <td>Alpha Anywhere Center</td>
+          <td style="text-align:center"><span style="background:#059669;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">2nd</span></td>
+          <td style="text-align:center"><span style="font-weight:600">4th</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">3 &#10003;</span></td></tr><tr>
+          <td>Raika Ackman</td>
+          <td>Alpha Anywhere Center</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="font-weight:600">2nd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Van McDavid</td>
+          <td>Alpha Anywhere Center</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">2nd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">3 &#10003;</span></td></tr><tr>
+          <td>Vasilios Giannopoulos</td>
+          <td>Alpha Anywhere Center</td>
+          <td style="text-align:center"><span style="background:#059669;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">2nd</span></td>
+          <td style="text-align:center"><span style="font-weight:600">3rd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Ella Clark</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Ferran Eashan Reddy</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="font-weight:600">2nd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Hadassah Atamas</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Leopold Levy</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">2nd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">3 &#10003;</span></td></tr><tr>
+          <td>Reia Wong</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Theodore Dipaola</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Brooklyn Baez</td>
+          <td>Alpha School Brownsville</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Ethan Bale</td>
+          <td>Alpha School Brownsville</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">2nd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Geraldine Gurrola</td>
+          <td>Alpha School Brownsville</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="font-weight:600">2nd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Leonardo Wright</td>
+          <td>Alpha School Brownsville</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Lucy Peden</td>
+          <td>Alpha School Brownsville</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">2nd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Mekhayll Joudrey</td>
+          <td>Alpha School Brownsville</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="font-weight:600">2nd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Evanna Mcdaniel</td>
+          <td>Alpha School Fort Worth</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Keaton Beck</td>
+          <td>Alpha School Fort Worth</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">2nd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">3 &#10003;</span></td></tr><tr>
+          <td>Theodora Obrecht</td>
+          <td>Alpha School Fort Worth</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="font-weight:600">3rd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">3 &#10003;</span></td></tr><tr>
+          <td>Caleb Chang</td>
+          <td>Alpha School Lake Forest</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Mia Baklanova</td>
+          <td>Alpha School Lake Forest</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="font-weight:600">2nd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Olivia Wojtowicz</td>
+          <td>Alpha School Lake Forest</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Amelia Barakat</td>
+          <td>Alpha School Miami</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="font-weight:600">2nd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Asaph Park</td>
+          <td>Alpha School Miami</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Benjamin Laserna</td>
+          <td>Alpha School Miami</td>
+          <td style="text-align:center"><span style="background:#059669;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">2nd</span></td>
+          <td style="text-align:center"><span style="font-weight:600">3rd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Catherine Caballero</td>
+          <td>Alpha School Miami</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Giulia Scandella</td>
+          <td>Alpha School Miami</td>
+          <td style="text-align:center"><span style="background:#059669;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">2nd</span></td>
+          <td style="text-align:center"><span style="font-weight:600">3rd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Jace Guilarte</td>
+          <td>Alpha School Miami</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Julian Dziuba</td>
+          <td>Alpha School Miami</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">2nd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">3 &#10003;</span></td></tr><tr>
+          <td>Mateo Sanchez</td>
+          <td>Alpha School Miami</td>
+          <td style="text-align:center"><span style="background:#059669;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">2nd</span></td>
+          <td style="text-align:center"><span style="font-weight:600">4th</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">3 &#10003;</span></td></tr><tr>
+          <td>Matias Cortazar</td>
+          <td>Alpha School Miami</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="font-weight:600">4th</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">4 &#10003;</span></td></tr><tr>
+          <td>Thomas Page</td>
+          <td>Alpha School Miami</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="font-weight:600">2nd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Adriana Danieri</td>
+          <td>Alpha School Palm Beach</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">3rd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">4 &#10003;</span></td></tr><tr>
+          <td>Clark Cho</td>
+          <td>Alpha School Palm Beach</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="font-weight:600">5th</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">5 &#10003;</span></td></tr><tr>
+          <td>Hope Grunow</td>
+          <td>Alpha School Palm Beach</td>
+          <td style="text-align:center"><span style="background:#059669;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">2nd</span></td>
+          <td style="text-align:center"><span style="font-weight:600">3rd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Isaac David</td>
+          <td>Alpha School Palm Beach</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="font-weight:600">2nd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Johnny Grunow</td>
+          <td>Alpha School Palm Beach</td>
+          <td style="text-align:center"><span style="background:#059669;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">2nd</span></td>
+          <td style="text-align:center"><span style="font-weight:600">3rd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Charlotte Pogue</td>
+          <td>Alpha School Plano</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="font-weight:600">2nd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Ronin Stanton</td>
+          <td>Alpha School Plano</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Sofia Stone</td>
+          <td>Alpha School Plano</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">2nd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">3 &#10003;</span></td></tr><tr>
+          <td>Ace Weir</td>
+          <td>Alpha School San Francisco</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Cameron Caldbeck</td>
+          <td>Alpha School San Francisco</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="font-weight:600">2nd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Donovan Warm</td>
+          <td>Alpha School Santa Barbara</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">4th</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">5 &#10003;</span></td></tr><tr>
+          <td>Brooks Knight</td>
+          <td>Alpha School Scottsdale</td>
+          <td style="text-align:center"><span style="background:#059669;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">2nd</span></td>
+          <td style="text-align:center"><span style="font-weight:600">3rd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Carter Tinkler</td>
+          <td>Alpha School Scottsdale</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Cruz Munoz</td>
+          <td>Alpha School Scottsdale</td>
+          <td style="text-align:center"><span style="background:#059669;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">2nd</span></td>
+          <td style="text-align:center"><span style="font-weight:600">3rd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Elliott Rudnicki</td>
+          <td>Alpha School Scottsdale</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Ethan Dailey</td>
+          <td>Alpha School Scottsdale</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="font-weight:600">2nd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Griffin Farnham</td>
+          <td>Alpha School Scottsdale</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="font-weight:600">2nd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Noah Hastings</td>
+          <td>Alpha School Scottsdale</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="font-weight:600">3rd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">3 &#10003;</span></td></tr><tr>
+          <td>Wells Lindsley</td>
+          <td>Alpha School Scottsdale</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">2nd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">3 &#10003;</span></td></tr><tr>
+          <td>Ethan Kim</td>
+          <td>GT School</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="font-weight:600">2nd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Ethan Stromfeld</td>
+          <td>GT School</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">3rd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">4 &#10003;</span></td></tr><tr>
+          <td>Neel Balija</td>
+          <td>GT School</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Nova Victore</td>
+          <td>GT School</td>
+          <td style="text-align:center"><span style="background:#059669;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">2nd</span></td>
+          <td style="text-align:center"><span style="font-weight:600">3rd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Novah Pitre</td>
+          <td>GT School</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Karthik Bala</td>
+          <td>Montessorium Cedar Park</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="font-weight:600">2nd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Mebin Timilsina</td>
+          <td>Montessorium Cedar Park</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">2nd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">3 &#10003;</span></td></tr><tr>
+          <td>Zander Halili</td>
+          <td>Montessorium Cedar Park</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">2nd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">3 &#10003;</span></td></tr><tr>
+          <td>Zara Enayati</td>
+          <td>Montessorium Cedar Park</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Mya Hadnot</td>
+          <td>Nova Academy Austin</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="font-weight:600">2nd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Arianna Salazar</td>
+          <td>Nova Academy Bastrop</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="font-weight:600">2nd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Brandon Gonzales</td>
+          <td>Nova Academy Bastrop</td>
+          <td style="text-align:center"><span style="background:#059669;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">2nd</span></td>
+          <td style="text-align:center"><span style="font-weight:600">3rd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Everett Mroczkowski</td>
+          <td>Nova Academy Bastrop</td>
+          <td style="text-align:center"><span style="background:#059669;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">2nd</span></td>
+          <td style="text-align:center"><span style="font-weight:600">3rd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Garrett Mullins</td>
+          <td>Nova Academy Bastrop</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="font-weight:600">3rd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">3 &#10003;</span></td></tr><tr>
+          <td>Lisa Olson</td>
+          <td>Nova Academy Bastrop</td>
+          <td style="text-align:center"><span style="background:#059669;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">2nd</span></td>
+          <td style="text-align:center"><span style="font-weight:600">4th</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Octavia Gieskes</td>
+          <td>Nova Academy Bastrop</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="font-weight:600">2nd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Orion Lira</td>
+          <td>Nova Academy Bastrop</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">2nd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">3 &#10003;</span></td></tr><tr>
+          <td>Allison Kim</td>
+          <td>Texas Sports Academy</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="font-weight:600">2nd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Jack Delbridge</td>
+          <td>Texas Sports Academy</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">2nd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">3 &#10003;</span></td></tr><tr>
+          <td>Jay Lever</td>
+          <td>Texas Sports Academy</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="font-weight:600">2nd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Jonathan Kambic</td>
+          <td>Texas Sports Academy</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">2nd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">3 &#10003;</span></td></tr><tr>
+          <td>Lauren Harden</td>
+          <td>Texas Sports Academy</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">3rd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">4 &#10003;</span></td></tr><tr>
+          <td>Mira Kambic</td>
+          <td>Texas Sports Academy</td>
+          <td style="text-align:center"><span style="background:#059669;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">2nd</span></td>
+          <td style="text-align:center"><span style="font-weight:600">3rd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td>Stone Meyers</td>
+          <td>Texas Sports Academy</td>
+          <td style="text-align:center"><span style="background:#059669;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">2nd</span></td>
+          <td style="text-align:center"><span style="font-weight:600">3rd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr></tbody>
+</table></div>
+</div>
+</div>
+<div id="page-passed1" class="page">
+<div class="site-header">
+  <button class="back-btn" onclick="showPage('home')">&#8592; Back to Home</button>
+  <h1 style="margin-top:10px">&#9889; Mastered 1 Effective Grade</h1>
+  <div class="sub">50 students have passed exactly 1 effective grade level this school year</div>
+</div>
+<div class="content">
+  <div style="overflow:auto;border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,.08)">
+<table class="st">
+  <thead><tr>
+    <th>Student Name</th><th>Campus</th><th>Effective Grade</th><th>Highest Mastered Grade</th>
+    <th>EGs Passed This Year</th><th>XP Remaining Before Test</th>
+  </tr></thead>
+  <tbody><tr>
+          <td>Harper Lembo</td>
+          <td>Alpha Anywhere Center</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>London Politi</td>
+          <td>Alpha Anywhere Center</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Alita Sanborn</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Diego Bash</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Ellis Kyung</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Eric Feltoon</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Hayden Jones</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>James Chao-Breyer</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Jamie Theunissen</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Jimmy Moore</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">2nd</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Leila Abony</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Lila Dawson</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Nico Blanco</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Oz Robertson</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Pierce McCord</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Riley Rosenberg</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Rylan Joseph</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Sloane Derham</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Thomas Nolan</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Emma Garcia Lerma</td>
+          <td>Alpha School Brownsville</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Emma Schipper</td>
+          <td>Alpha School Brownsville</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Maya Muthuswamy</td>
+          <td>Alpha School Brownsville</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Victoria Leal</td>
+          <td>Alpha School Brownsville</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Reed Emerton</td>
+          <td>Alpha School Fort Worth</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Alessia Kriete</td>
+          <td>Alpha School Miami</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Daniel Calvo</td>
+          <td>Alpha School Miami</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Enzo Estrada</td>
+          <td>Alpha School Miami</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Leo Montagna</td>
+          <td>Alpha School Miami</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Nash Niccolls</td>
+          <td>Alpha School Miami</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Sai Shah</td>
+          <td>Alpha School Miami</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Max Stone</td>
+          <td>Alpha School Plano</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Arden Kaplan</td>
+          <td>Alpha School San Francisco</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Austin Wong</td>
+          <td>Alpha School San Francisco</td>
+          <td style="text-align:center"><span style="background:#059669;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">2nd</span></td>
+          <td style="text-align:center"><span style="font-weight:600">2nd</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Leo Clark</td>
+          <td>Alpha School San Francisco</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Vic Satijn</td>
+          <td>GT School</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Jake Grimes</td>
+          <td>Montessorium Cedar Park</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Jiwoo Choi</td>
+          <td>Montessorium Cedar Park</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Riva Stucchio</td>
+          <td>Montessorium Cedar Park</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Vikram Singh</td>
+          <td>Montessorium Cedar Park</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Alana Marin Barrios</td>
+          <td>Nova Academy Austin</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Dillinmar Lugo Marquez</td>
+          <td>Nova Academy Austin</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Faustina Ngambo-kialengele</td>
+          <td>Nova Academy Austin</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Gael Gonzalez-Romero</td>
+          <td>Nova Academy Austin</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Kamila Gonzalez-Romero</td>
+          <td>Nova Academy Austin</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Victoria Marin Barrios</td>
+          <td>Nova Academy Austin</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Jace Joslyn</td>
+          <td>Nova Academy Bastrop</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Joshua Mullins</td>
+          <td>Nova Academy Bastrop</td>
+          <td style="text-align:center"><span style="background:#059669;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">2nd</span></td>
+          <td style="text-align:center"><span style="font-weight:600">2nd</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Fiona Krajicek</td>
+          <td>Texas Sports Academy</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Lucy Wilkinson</td>
+          <td>Texas Sports Academy</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Tallulah Chaney</td>
+          <td>Texas Sports Academy</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td><td style="text-align:center"><span style="color:#d97706;font-weight:600">1</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr></tbody>
+</table></div>
+</div>
+</div>
+<div id="page-notmast" class="page">
+<div class="site-header">
+  <button class="back-btn" onclick="showPage('home')">&#8592; Back to Home</button>
+  <h1 style="margin-top:10px">&#128073; Not Yet Mastered an Effective Grade</h1>
+  <div class="sub">40 students have not yet passed their first effective grade level</div>
+</div>
+<div class="content">
+  <div style="overflow:auto;border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,.08)">
+<table class="st">
+  <thead><tr>
+    <th>Student Name</th><th>Campus</th><th>Effective Grade</th><th>Highest Mastered Grade</th>
+    <th>EGs Passed This Year</th><th>XP Remaining Before Test</th>
+  </tr></thead>
+  <tbody><tr>
+          <td>Colm Bowen</td>
+          <td>Alpha Anywhere Center</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td><td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No mastery data</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Aria Nicholls</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td><td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No mastery data</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Arlo Knecht</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td><td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No mastery data</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Asher Hoogstraten</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td><td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No mastery data</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Bandon Peterson</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td><td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No mastery data</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Blake Price</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td><td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No mastery data</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Emilia Lobo</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="background:#059669;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">2nd</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td><td style="text-align:center"><span style="color:#9ca3af">0</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Ezra Allred</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="background:#059669;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">2nd</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td><td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No mastery data</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Jasper Dawson</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td><td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No mastery data</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Miguel Bash</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td><td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No mastery data</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Nadia Mercer</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td><td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No mastery data</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Nora Rosenthal</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td><td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No mastery data</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Rivers Morgan</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td><td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No mastery data</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Rivers Yong</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td><td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No mastery data</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Savi Richardson</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td><td style="text-align:center"><span style="color:#9ca3af">0</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Scott Baehr</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td><td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No mastery data</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Vincent Blanco</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td><td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No mastery data</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Vivian Ajouz</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td><td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No mastery data</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>William Evans</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td><td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No mastery data</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Aster Burns</td>
+          <td>Alpha School Brownsville</td>
+          <td style="text-align:center"><span style="background:#059669;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">2nd</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td><td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No mastery data</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Luisela Almanza</td>
+          <td>Alpha School Brownsville</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td><td style="text-align:center"><span style="color:#9ca3af">0</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Rafaela Almanza</td>
+          <td>Alpha School Brownsville</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td><td style="text-align:center"><span style="color:#9ca3af">0</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Sarah Schipper</td>
+          <td>Alpha School Brownsville</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td><td style="text-align:center"><span style="color:#9ca3af">0</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Thiago Rodriguez Penzo</td>
+          <td>Alpha School Brownsville</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td><td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No mastery data</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Cora Ishaq</td>
+          <td>Alpha School Lake Forest</td>
+          <td style="text-align:center"><span style="background:#059669;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">2nd</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td><td style="text-align:center"><span style="color:#9ca3af">0</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Betty Grunow</td>
+          <td>Alpha School Palm Beach</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td><td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No mastery data</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Liam Bryan</td>
+          <td>Alpha School Plano</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td><td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No mastery data</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>London Plascencia</td>
+          <td>Alpha School Plano</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td><td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No mastery data</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Jesse Crain, Jr</td>
+          <td>Alpha School San Francisco</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td><td style="text-align:center"><span style="color:#9ca3af">0</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Scarlett Meyer</td>
+          <td>Alpha School Scottsdale</td>
+          <td style="text-align:center"><span style="background:#059669;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">2nd</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td><td style="text-align:center"><span style="color:#9ca3af">0</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Calvin Barraza</td>
+          <td>Montessorium Cedar Park</td>
+          <td style="text-align:center"><span style="background:#059669;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">2nd</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td><td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No mastery data</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Kriya Santhoshkumar</td>
+          <td>Montessorium Cedar Park</td>
+          <td style="text-align:center"><span style="background:#059669;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">2nd</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td><td style="text-align:center"><span style="color:#9ca3af">0</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Liam Rahim</td>
+          <td>Montessorium Cedar Park</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td><td style="text-align:center"><span style="color:#9ca3af">0</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Aleiah Jenkins</td>
+          <td>Nova Academy Austin</td>
+          <td style="text-align:center"><span style="background:#059669;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">2nd</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td><td style="text-align:center"><span style="color:#9ca3af">0</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Anthonella Ochoa</td>
+          <td>Nova Academy Austin</td>
+          <td style="text-align:center"><span style="background:#059669;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">2nd</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td><td style="text-align:center"><span style="color:#9ca3af">0</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Justin Wooley</td>
+          <td>Nova Academy Austin</td>
+          <td style="text-align:center"><span style="background:#059669;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">2nd</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td><td style="text-align:center"><span style="color:#9ca3af">0</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Shailene Ferrebus</td>
+          <td>Nova Academy Austin</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td><td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No mastery data</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Analea Lopez</td>
+          <td>Nova Academy Bastrop</td>
+          <td style="text-align:center"><span style="background:#059669;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">2nd</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td><td style="text-align:center"><span style="color:#9ca3af">0</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Jax Marroquin</td>
+          <td>Texas Sports Academy</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td><td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No mastery data</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr><tr>
+          <td>Jennifer Thomason</td>
+          <td>Texas Sports Academy</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td><td style="text-align:center"><span style="color:#9ca3af">0</span></td><td style="text-align:center"><span style="color:#9ca3af">&#8212;</span></td></tr></tbody>
+</table></div>
+</div>
+</div>
+<div id="page-missing" class="page">
+<div class="site-header">
+  <button class="back-btn" onclick="showPage('home')">&#8592; Back to Home</button>
+  <h1 style="margin-top:10px">&#10067; Missing Effective Grade</h1>
+  <div class="sub">62 students are working at K&ndash;2 level in the DB but have no effective grade on file</div>
+</div>
+<div class="content">
+  <div class="danger-note">
+    &#9888; <strong>Action Required:</strong> These students have Language mastery data at the K&ndash;2 level
+    but were not matched in the effective grades CSV. Their effective grades and on-track status cannot
+    be calculated until they are added to the CSV. Please update the effective grades sheet.
+  </div>
+  <div class="cards-row">
+    <div style="background:white;border-radius:12px;padding:18px 22px;flex:1;min-width:110px;box-shadow:0 1px 4px rgba(0,0,0,.07);border-top:4px solid #7c3aed">
+  <div style="font-size:2rem;font-weight:800;color:#7c3aed;line-height:1.1">62</div>
+  <div style="font-size:.72rem;color:#64748b;margin-top:4px;text-transform:uppercase;letter-spacing:.05em">With Test Data This Year</div>
+</div>
+    <div style="background:white;border-radius:12px;padding:18px 22px;flex:1;min-width:110px;box-shadow:0 1px 4px rgba(0,0,0,.07);border-top:4px solid #6b7280">
+  <div style="font-size:2rem;font-weight:800;color:#6b7280;line-height:1.1">0</div>
+  <div style="font-size:.72rem;color:#64748b;margin-top:4px;text-transform:uppercase;letter-spacing:.05em">No Tests on Record</div>
+</div>
+  </div>
+  <div style="overflow:auto;border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,.08)">
+<table class="st">
+  <thead><tr>
+    <th>Student Name</th><th>Campus</th><th style="text-align:center">Highest Mastered Grade (This Year)</th>
+  </tr></thead>
+  <tbody><tr>
+          <td>Ferris Holder</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="font-weight:600">2nd</span></td>
+        </tr><tr>
+          <td>Jad Qunibi</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td>
+        </tr><tr>
+          <td>Thomas Gonzales</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td>
+        </tr><tr>
+          <td>Damian Hernandez</td>
+          <td>Alpha School Brownsville</td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td>
+        </tr><tr>
+          <td>Kaden Kane</td>
+          <td>Alpha School Fort Worth</td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td>
+        </tr><tr>
+          <td>Cameron Creelman</td>
+          <td>Alpha School Lake Forest</td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td>
+        </tr><tr>
+          <td>Sophie Yang</td>
+          <td>Alpha School Lake Forest</td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td>
+        </tr><tr>
+          <td>Sawyer Foley</td>
+          <td>Alpha School Scottsdale</td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td>
+        </tr><tr>
+          <td>Abhay Ganti</td>
+          <td>GT Anywhere</td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td>
+        </tr><tr>
+          <td>Aliyah Bell</td>
+          <td>GT Anywhere</td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td>
+        </tr><tr>
+          <td>Atlas Hartsell</td>
+          <td>GT Anywhere</td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td>
+        </tr><tr>
+          <td>Benjamin Groce</td>
+          <td>GT Anywhere</td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td>
+        </tr><tr>
+          <td>Calvert Taylor</td>
+          <td>GT Anywhere</td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td>
+        </tr><tr>
+          <td>Charlotte Groce</td>
+          <td>GT Anywhere</td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td>
+        </tr><tr>
+          <td>Dougie Meservey</td>
+          <td>GT Anywhere</td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td>
+        </tr><tr>
+          <td>Elle Calderwood</td>
+          <td>GT Anywhere</td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td>
+        </tr><tr>
+          <td>GT Shadow 7</td>
+          <td>GT Anywhere</td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td>
+        </tr><tr>
+          <td>GT Shadow1</td>
+          <td>GT Anywhere</td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td>
+        </tr><tr>
+          <td>Kabir Sheth</td>
+          <td>GT Anywhere</td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td>
+        </tr><tr>
+          <td>Kin Yu Wong</td>
+          <td>GT Anywhere</td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td>
+        </tr><tr>
+          <td>Mara Edwards</td>
+          <td>GT Anywhere</td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td>
+        </tr><tr>
+          <td>Matias Simmons</td>
+          <td>GT Anywhere</td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td>
+        </tr><tr>
+          <td>Owen Gozun</td>
+          <td>GT Anywhere</td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td>
+        </tr><tr>
+          <td>Sheppard Groce</td>
+          <td>GT Anywhere</td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td>
+        </tr><tr>
+          <td>Stetson Calk</td>
+          <td>GT Anywhere</td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td>
+        </tr><tr>
+          <td>Thaddeus Herrera</td>
+          <td>GT Anywhere</td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td>
+        </tr><tr>
+          <td>Mallory Hobart</td>
+          <td>GT School</td>
+          <td style="text-align:center"><span style="font-weight:600">2nd</span></td>
+        </tr><tr>
+          <td>Damian Abdel-Malak</td>
+          <td>Immaculate Academy</td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td>
+        </tr><tr>
+          <td>Ellie Valladares</td>
+          <td>Immaculate Academy</td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td>
+        </tr><tr>
+          <td>Leman Student3</td>
+          <td>Leman Manhattan Preparatory School</td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td>
+        </tr><tr>
+          <td>Leman Test1</td>
+          <td>Leman Manhattan Preparatory School</td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td>
+        </tr><tr>
+          <td>Leman Test2</td>
+          <td>Leman Manhattan Preparatory School</td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td>
+        </tr><tr>
+          <td>Leman Test3</td>
+          <td>Leman Manhattan Preparatory School</td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td>
+        </tr><tr>
+          <td>Leman Test4</td>
+          <td>Leman Manhattan Preparatory School</td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td>
+        </tr><tr>
+          <td>Matt Holt</td>
+          <td>Leman Manhattan Preparatory School</td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td>
+        </tr><tr>
+          <td>Ashlee Gizdich</td>
+          <td>Montessorium Cedar Park</td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td>
+        </tr><tr>
+          <td>Taj Al Dean Stroman</td>
+          <td>NextGen Academy</td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td>
+        </tr><tr>
+          <td>Brecken Smith</td>
+          <td>Novatio</td>
+          <td style="text-align:center"><span style="font-weight:600">2nd</span></td>
+        </tr><tr>
+          <td>Armoni Nelson</td>
+          <td>ScienceSIS</td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td>
+        </tr><tr>
+          <td>Jer&#x27;Moni Miller</td>
+          <td>ScienceSIS</td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td>
+        </tr><tr>
+          <td>Mackenzie Crum</td>
+          <td>ScienceSIS</td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td>
+        </tr><tr>
+          <td>Moriah Johnson</td>
+          <td>ScienceSIS</td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td>
+        </tr><tr>
+          <td>Talia Braithwaite</td>
+          <td>ScienceSIS</td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td>
+        </tr><tr>
+          <td>Tionne Watts</td>
+          <td>ScienceSIS</td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td>
+        </tr><tr>
+          <td>Antione Paige</td>
+          <td>TSA Basketball - Houston</td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td>
+        </tr><tr>
+          <td>Blake Griffin</td>
+          <td>TSA Dynamic Prep</td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td>
+        </tr><tr>
+          <td>Cooper Dowdy</td>
+          <td>TSA Dynamic Prep</td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td>
+        </tr><tr>
+          <td>Daniel Malone</td>
+          <td>TSA Dynamic Prep</td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td>
+        </tr><tr>
+          <td>Jaden Rowe</td>
+          <td>TSA Dynamic Prep</td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td>
+        </tr><tr>
+          <td>Kayden Browning</td>
+          <td>TSA Dynamic Prep</td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td>
+        </tr><tr>
+          <td>Micah Clarke</td>
+          <td>TSA Dynamic Prep</td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td>
+        </tr><tr>
+          <td>Isaiah Abraham</td>
+          <td>TSA Football - Carrollton</td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td>
+        </tr><tr>
+          <td>Joseph Stoner</td>
+          <td>TSA Football - Carrollton</td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td>
+        </tr><tr>
+          <td>Kody Gonzalez</td>
+          <td>TSA Football - Carrollton</td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td>
+        </tr><tr>
+          <td>Hatcher St John</td>
+          <td>TSA Modern Samurai Academy</td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td>
+        </tr><tr>
+          <td>Lukkas Powao</td>
+          <td>TSA Modern Samurai Academy</td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td>
+        </tr><tr>
+          <td>Hudson Carter</td>
+          <td>TSA Online</td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td>
+        </tr><tr>
+          <td>Jesse Soberal</td>
+          <td>TSA The Bennett School</td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td>
+        </tr><tr>
+          <td>Kolten Haby</td>
+          <td>TSA The Bennett School</td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td>
+        </tr><tr>
+          <td>Adalina Schumann</td>
+          <td>Texas Sports Academy</td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td>
+        </tr><tr>
+          <td>Smith Adreon</td>
+          <td>Texas Sports Academy</td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td>
+        </tr><tr>
+          <td>Angel Raymundo Duarte</td>
+          <td>Vita High School</td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td>
+        </tr></tbody>
+</table></div>
+</div>
+</div>
+<div id="page-new-enroll" class="page">
+<div class="site-header">
+  <button class="back-btn" onclick="showPage('home')">&#8592; Back to Home</button>
+  <h1 style="margin-top:10px">&#127381; New Enrollments</h1>
+  <div class="sub">26 students enrolled on or after January 5, 2026</div>
+</div>
+<div class="content">
+  <div class="info-note">
+    &#8505; These students enrolled mid-year (Jan 5, 2026 or later) and are tracked separately.
+    They are not included in the Mastered 2 / Mastered 1 / Not Yet Mastered counts or the on-track percentage.
+    <br><br>
+    <strong>Expected HMG by EOY</strong> is calculated using the 2&thinsp;grades&thinsp;/&thinsp;full&thinsp;year
+    benchmark (Aug 13&thinsp;2025&nbsp;&rarr;&nbsp;Jun 5&thinsp;2026 = 296 days), prorated from their enrollment
+    date based on their current working grade.
+  </div>
+  <div style="overflow:auto;border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,.08)">
+<table class="st">
+  <thead><tr>
+    <th>Student Name</th><th>Campus</th><th>Enrollment Date</th>
+    <th>Effective Grade</th><th>Highest Mastered</th>
+    <th>EGs Passed This Year</th><th>Expected HMG by EOY</th>
+  </tr></thead>
+  <tbody><tr>
+          <td>Harvey Caulin</td>
+          <td>Alpha Anywhere Center</td>
+          <td style="text-align:center">Mar 2, 2026</td>
+          <td style="text-align:center"><span style="background:#059669;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">2nd</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td>
+          <td><span style="color:#9ca3af">0 — not yet at EG level</span></td>
+          <td style="text-align:center"><span style="color:#d97706;font-weight:600">1st&rarr;2nd <span style="font-size:.7rem;opacity:.7">(1.6)</span></span></td>
+        </tr><tr>
+          <td>Oliver McLeod</td>
+          <td>Alpha Anywhere Center</td>
+          <td style="text-align:center">Apr 6, 2026</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td>
+          <td><span style="color:#d97706;font-weight:600">1</span> <span style="color:#6b7280;font-size:.75rem">(Highest test: K)</span></td>
+          <td style="text-align:center"><span style="color:#dc2626;font-weight:600">K <span style="font-size:.7rem;opacity:.7">(0.4)</span></span></td>
+        </tr><tr>
+          <td>Ezra Robertson</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center">Mar 2, 2026</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td>
+          <td><span style="color:#9ca3af;font-style:italic">No tests on record</span></td>
+          <td style="text-align:center"><span style="color:#dc2626;font-weight:600">Pre-K <span style="font-size:.7rem;opacity:.7">(-0.4)</span></span></td>
+        </tr><tr>
+          <td>Francesca Faeder</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center">Jan 20, 2026</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td>
+          <td><span style="color:#9ca3af;font-style:italic">No tests on record</span></td>
+          <td style="text-align:center"><span style="color:#dc2626;font-weight:600">Pre-K <span style="font-size:.7rem;opacity:.7">(-0.1)</span></span></td>
+        </tr><tr>
+          <td>Kobe Brescic</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center">Mar 2, 2026</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td>
+          <td><span style="color:#9ca3af;font-style:italic">No tests on record</span></td>
+          <td style="text-align:center"><span style="color:#dc2626;font-weight:600">Pre-K <span style="font-size:.7rem;opacity:.7">(-0.4)</span></span></td>
+        </tr><tr>
+          <td>Valen Maheswaran</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center">Mar 2, 2026</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td>
+          <td><span style="color:#9ca3af">0 — not yet at EG level</span></td>
+          <td style="text-align:center"><span style="color:#dc2626;font-weight:600">K&rarr;1st <span style="font-size:.7rem;opacity:.7">(0.6)</span></span></td>
+        </tr><tr>
+          <td>Woodson Wilcox</td>
+          <td>Alpha School Austin</td>
+          <td style="text-align:center">Jan 5, 2026</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td>
+          <td><span style="color:#9ca3af;font-style:italic">No tests on record</span></td>
+          <td style="text-align:center"><span style="color:#dc2626;font-weight:600">K <span style="font-size:.7rem;opacity:.7">(0.0)</span></span></td>
+        </tr><tr>
+          <td>Payton Kroll</td>
+          <td>Alpha School Fort Worth</td>
+          <td style="text-align:center">Mar 2, 2026</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td>
+          <td><span style="color:#9ca3af;font-style:italic">No tests on record</span></td>
+          <td style="text-align:center"><span style="color:#dc2626;font-weight:600">Pre-K <span style="font-size:.7rem;opacity:.7">(-0.4)</span></span></td>
+        </tr><tr>
+          <td>Annalise Faheem</td>
+          <td>Alpha School Lake Forest</td>
+          <td style="text-align:center">Jan 5, 2026</td>
+          <td style="text-align:center"><span style="background:#059669;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">2nd</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td>
+          <td><span style="color:#9ca3af">0 — not yet at EG level</span></td>
+          <td style="text-align:center"><span style="color:#16a34a;font-weight:600">2nd <span style="font-size:.7rem;opacity:.7">(2.0)</span></span></td>
+        </tr><tr>
+          <td>Arthur Przybyl</td>
+          <td>Alpha School Lake Forest</td>
+          <td style="text-align:center">Feb 9, 2026</td>
+          <td style="text-align:center"><span style="background:#059669;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">2nd</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td>
+          <td><span style="color:#9ca3af">0 — not yet at EG level</span></td>
+          <td style="text-align:center"><span style="color:#d97706;font-weight:600">1st&rarr;2nd <span style="font-size:.7rem;opacity:.7">(1.8)</span></span></td>
+        </tr><tr>
+          <td>Lorenzo Di Rocco</td>
+          <td>Alpha School Lake Forest</td>
+          <td style="text-align:center">Mar 16, 2026</td>
+          <td style="text-align:center"><span style="background:#059669;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">2nd</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td>
+          <td><span style="color:#9ca3af">0 — not yet at EG level</span></td>
+          <td style="text-align:center"><span style="color:#d97706;font-weight:600">1st&rarr;2nd <span style="font-size:.7rem;opacity:.7">(1.5)</span></span></td>
+        </tr><tr>
+          <td>Lucia Quimby</td>
+          <td>Alpha School Lake Forest</td>
+          <td style="text-align:center">Mar 23, 2026</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td>
+          <td><span style="color:#9ca3af">0 — not yet at EG level</span></td>
+          <td style="text-align:center"><span style="color:#dc2626;font-weight:600">K&rarr;1st <span style="font-size:.7rem;opacity:.7">(0.5)</span></span></td>
+        </tr><tr>
+          <td>Nayel Bajwa</td>
+          <td>Alpha School Lake Forest</td>
+          <td style="text-align:center">Feb 2, 2026</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td>
+          <td><span style="color:#9ca3af">0 — not yet at EG level</span></td>
+          <td style="text-align:center"><span style="color:#dc2626;font-weight:600">K&rarr;1st <span style="font-size:.7rem;opacity:.7">(0.8)</span></span></td>
+        </tr><tr>
+          <td>Sojourn Stinson</td>
+          <td>Alpha School Lake Forest</td>
+          <td style="text-align:center">Jan 5, 2026</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td>
+          <td><span style="color:#9ca3af;font-style:italic">No tests on record</span></td>
+          <td style="text-align:center"><span style="color:#d97706;font-weight:600">1st <span style="font-size:.7rem;opacity:.7">(1.0)</span></span></td>
+        </tr><tr>
+          <td>Kai Tilzer</td>
+          <td>Alpha School Scottsdale</td>
+          <td style="text-align:center">Jan 5, 2026</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td>
+          <td><span style="color:#9ca3af;font-style:italic">No tests on record</span></td>
+          <td style="text-align:center"><span style="color:#dc2626;font-weight:600">K <span style="font-size:.7rem;opacity:.7">(0.0)</span></span></td>
+        </tr><tr>
+          <td>Maren Gray Marcinek</td>
+          <td>Alpha School Scottsdale</td>
+          <td style="text-align:center">Jan 5, 2026</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td>
+          <td><span style="color:#d97706;font-weight:600">1</span> <span style="color:#6b7280;font-size:.75rem">(Highest test: K)</span></td>
+          <td style="text-align:center"><span style="color:#d97706;font-weight:600">1st <span style="font-size:.7rem;opacity:.7">(1.0)</span></span></td>
+        </tr><tr>
+          <td>Olivia Fay</td>
+          <td>Alpha School Scottsdale</td>
+          <td style="text-align:center">Jan 26, 2026</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td>
+          <td><span style="color:#9ca3af">0 — not yet at EG level</span></td>
+          <td style="text-align:center"><span style="color:#dc2626;font-weight:600">K&rarr;1st <span style="font-size:.7rem;opacity:.7">(0.9)</span></span></td>
+        </tr><tr>
+          <td>Palmer Lucovich</td>
+          <td>Alpha School Scottsdale</td>
+          <td style="text-align:center">Mar 2, 2026</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="font-weight:600">1st</span></td>
+          <td><span style="color:#d97706;font-weight:600">1</span> <span style="color:#6b7280;font-size:.75rem">(Highest test: 1st)</span></td>
+          <td style="text-align:center"><span style="color:#d97706;font-weight:600">1st&rarr;2nd <span style="font-size:.7rem;opacity:.7">(1.6)</span></span></td>
+        </tr><tr>
+          <td>Sage Tilzer</td>
+          <td>Alpha School Scottsdale</td>
+          <td style="text-align:center">Jan 5, 2026</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td>
+          <td><span style="color:#9ca3af">0 — not yet at EG level</span></td>
+          <td style="text-align:center"><span style="color:#d97706;font-weight:600">1st <span style="font-size:.7rem;opacity:.7">(1.0)</span></span></td>
+        </tr><tr>
+          <td>Arya Powers</td>
+          <td>Alpha School Tampa</td>
+          <td style="text-align:center">Aug 14, 2026</td>
+          <td style="text-align:center"><span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">1st</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td>
+          <td><span style="color:#9ca3af;font-style:italic">No tests on record</span></td>
+          <td style="text-align:center"><span style="color:#dc2626;font-weight:600">K <span style="font-size:.7rem;opacity:.7">(0.0)</span></span></td>
+        </tr><tr>
+          <td>Athena Soni</td>
+          <td>Montessorium Cedar Park</td>
+          <td style="text-align:center">Jan 5, 2026</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td>
+          <td><span style="color:#9ca3af;font-style:italic">No tests on record</span></td>
+          <td style="text-align:center"><span style="color:#dc2626;font-weight:600">K <span style="font-size:.7rem;opacity:.7">(0.0)</span></span></td>
+        </tr><tr>
+          <td>Eva Skinner</td>
+          <td>Montessorium Cedar Park</td>
+          <td style="text-align:center">Feb 2, 2026</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td>
+          <td><span style="color:#9ca3af;font-style:italic">No tests on record</span></td>
+          <td style="text-align:center"><span style="color:#dc2626;font-weight:600">Pre-K <span style="font-size:.7rem;opacity:.7">(-0.2)</span></span></td>
+        </tr><tr>
+          <td>Maya Prokupets</td>
+          <td>Montessorium Cedar Park</td>
+          <td style="text-align:center">Jan 5, 2026</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="font-weight:600">K</span></td>
+          <td><span style="color:#d97706;font-weight:600">1</span> <span style="color:#6b7280;font-size:.75rem">(Highest test: K)</span></td>
+          <td style="text-align:center"><span style="color:#d97706;font-weight:600">1st <span style="font-size:.7rem;opacity:.7">(1.0)</span></span></td>
+        </tr><tr>
+          <td>Soren Winter</td>
+          <td>Montessorium Cedar Park</td>
+          <td style="text-align:center">Feb 15, 2026</td>
+          <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td>
+          <td><span style="color:#9ca3af;font-style:italic">No tests on record</span></td>
+          <td style="text-align:center"><span style="color:#dc2626;font-weight:600">Pre-K <span style="font-size:.7rem;opacity:.7">(-0.3)</span></span></td>
+        </tr><tr>
+          <td>Jax McCuistion</td>
+          <td>NextGen Academy</td>
+          <td style="text-align:center">Jan 5, 2026</td>
+          <td style="text-align:center"><span style="background:#059669;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">2nd</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td>
+          <td><span style="color:#9ca3af">0 — not yet at EG level</span></td>
+          <td style="text-align:center"><span style="color:#16a34a;font-weight:600">2nd <span style="font-size:.7rem;opacity:.7">(2.0)</span></span></td>
+        </tr><tr>
+          <td>Rhoden Hamm</td>
+          <td>Texas Sports Academy</td>
+          <td style="text-align:center">Feb 8, 2026</td>
+          <td style="text-align:center"><span style="background:#059669;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">2nd</span></td>
+          <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td>
+          <td><span style="color:#9ca3af">0 — not yet at EG level</span></td>
+          <td style="text-align:center"><span style="color:#d97706;font-weight:600">1st&rarr;2nd <span style="font-size:.7rem;opacity:.7">(1.8)</span></span></td>
+        </tr></tbody>
+</table></div>
+</div>
+</div>
+
+<script>
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(function(p){ p.classList.remove('active'); });
+  var el = document.getElementById(id);
+  if (el) { el.classList.add('active'); window.scrollTo(0,0); }
+}
+
+function initSortableTables() {
+  document.querySelectorAll('table.st').forEach(function(table) {
+    var headers = table.querySelectorAll('thead th');
+    headers.forEach(function(th, colIdx) {
+      if (th._sortInit) return;
+      th._sortInit = true;
+      th._sortDir = 0;
+      th.style.cursor = 'pointer';
+      th.style.userSelect = 'none';
+      th.title = 'Click to sort';
+      th.addEventListener('click', function() {
+        // reset other headers in this table
+        headers.forEach(function(h) {
+          if (h !== th) {
+            h._sortDir = 0;
+            var ind = h.querySelector('.sort-ind');
+            if (ind) ind.textContent = '';
+          }
+        });
+        th._sortDir = th._sortDir === 1 ? -1 : 1;
+        var ind = th.querySelector('.sort-ind');
+        if (!ind) {
+          ind = document.createElement('span');
+          ind.className = 'sort-ind';
+          ind.style.cssText = 'margin-left:5px;font-size:.65rem;opacity:.75';
+          th.appendChild(ind);
+        }
+        ind.textContent = th._sortDir === 1 ? ' ▲' : ' ▼';
+        var tbody = table.querySelector('tbody');
+        var rows = Array.from(tbody.querySelectorAll('tr'));
+        var dir = th._sortDir;
+        rows.sort(function(a, b) {
+          var aText = (a.cells[colIdx] ? a.cells[colIdx].textContent : '').trim();
+          var bText = (b.cells[colIdx] ? b.cells[colIdx].textContent : '').trim();
+          // date sort: detect "Mon DD, YYYY" patterns (e.g. "Jan 5, 2026")
+          var dateRe = /^[A-Za-z]{3}\s+\d{1,2},\s*\d{4}$/;
+          if (dateRe.test(aText) && dateRe.test(bText)) {
+            var aD = new Date(aText); var bD = new Date(bText);
+            if (!isNaN(aD) && !isNaN(bD)) return dir * (aD - bD);
+          }
+          // numeric sort if both parse as pure numbers
+          var aNum = parseFloat(aText.replace(/[^0-9.]/g, ''));
+          var bNum = parseFloat(bText.replace(/[^0-9.]/g, ''));
+          if (!isNaN(aNum) && !isNaN(bNum) && aText.replace(/[^0-9.]/g,'') !== '' && bText.replace(/[^0-9.]/g,'') !== '') return dir * (aNum - bNum);
+          return dir * aText.toLowerCase().localeCompare(bText.toLowerCase());
+        });
+        rows.forEach(function(row) { tbody.appendChild(row); });
+      });
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  showPage('home');
+  initSortableTables();
+  initHomeCharts();
+});
+
+function initHomeCharts() {
+  var labels   = ["Aug 13", "Aug 18", "Aug 25", "Sep 1", "Sep 8", "Sep 15", "Sep 22", "Sep 29", "Oct 6", "Oct 13", "Oct 20", "Oct 27", "Nov 3", "Nov 10", "Nov 17", "Nov 24", "Dec 1", "Dec 8", "Dec 15", "Dec 22", "Dec 29", "Jan 5", "Jan 12", "Jan 19", "Jan 26", "Feb 2", "Feb 9", "Feb 16", "Feb 23", "Mar 2", "Mar 9", "Mar 16", "Mar 23", "Mar 30", "Apr 6", "Apr 7"];
+  var dataGP2  = [0, 2, 2, 2, 4, 4, 4, 4, 4, 6, 7, 8, 13, 14, 18, 20, 20, 22, 22, 26, 26, 27, 36, 42, 45, 46, 48, 50, 53, 55, 59, 64, 71, 75, 79, 79];
+  var dataP1   = [10, 12, 12, 14, 19, 20, 24, 25, 26, 26, 29, 32, 37, 37, 40, 41, 42, 41, 47, 46, 46, 48, 52, 53, 55, 57, 56, 54, 53, 53, 52, 56, 54, 54, 50, 50];
+  if (!labels.length || typeof Chart === 'undefined') return;
+  var commonOpts = {
+    responsive: true, maintainAspectRatio: false,
+    interaction: { mode: 'index', intersect: false },
+    plugins: { legend: { display: false }, tooltip: {
+      backgroundColor: '#1e293b', titleColor: '#94a3b8', bodyColor: '#f1f5f9',
+      padding: 10, cornerRadius: 8,
+      callbacks: { label: function(ctx){ return '  ' + ctx.parsed.y + ' students'; } }
+    }},
+    scales: {
+      x: { grid: { color: '#f8fafc' }, border: { color: '#e2e8f0' },
+           ticks: { color: '#94a3b8', font: { size: 10 }, maxRotation: 40, autoSkip: true, maxTicksLimit: 10 } },
+      y: { min: 0, max: 110, grid: { color: '#f1f5f9' }, border: { color: '#e2e8f0' },
+           ticks: { color: '#94a3b8', font: { size: 10 }, stepSize: 20 } }
+    },
+    elements: { point: { radius: 2.5, hoverRadius: 5 }, line: { tension: 0.25, borderWidth: 2 } }
+  };
+  new Chart(document.getElementById('chartGP2Home'), {
+    type: 'line',
+    data: { labels: labels, datasets: [{ data: dataGP2,
+      borderColor: '#16a34a', backgroundColor: 'rgba(22,163,74,0.08)',
+      fill: true, pointBackgroundColor: '#16a34a' }] },
+    options: commonOpts
+  });
+  new Chart(document.getElementById('chartP1Home'), {
+    type: 'line',
+    data: { labels: labels, datasets: [{ data: dataP1,
+      borderColor: '#d97706', backgroundColor: 'rgba(217,119,6,0.08)',
+      fill: true, pointBackgroundColor: '#d97706' }] },
+    options: commonOpts
+  });
+}
+</script>
+</body>
+</html>
