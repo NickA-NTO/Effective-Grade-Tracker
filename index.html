@@ -234,7 +234,7 @@ table.st td { padding: 10px 14px; vertical-align: middle; }
           <td>Ella Clark</td>
           <td>Alpha School Austin</td>
           <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
-          <td style="text-align:center"><span style="font-weight:600">1st</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">2 &#10003;</span></td></tr><tr>
+          <td style="text-align:center"><span style="font-weight:600">2nd</span></td><td style="text-align:center"><span style="color:#16a34a;font-weight:700">3 &#10003;</span></td></tr><tr>
           <td>Ellis Kyung</td>
           <td>Alpha School Austin</td>
           <td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">K</span></td>
@@ -1111,7 +1111,7 @@ table.st td { padding: 10px 14px; vertical-align: middle; }
           <td style="text-align:center">Mar 16, 2026</td>
           <td style="text-align:center"><span style="background:#059669;color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:600">2nd</span></td>
           <td style="text-align:center"><span style="color:#9ca3af;font-style:italic">No data</span></td>
-          <td><span style="color:#9ca3af;font-style:italic">No tests on record</span></td>
+          <td><span style="color:#9ca3af">0 — not yet at EG level</span></td>
           <td style="text-align:center"><span style="color:#d97706;font-weight:600">1st&rarr;2nd <span style="font-size:.7rem;opacity:.7">(1.5)</span></span></td>
         </tr><tr>
           <td>Lucia Quimby</td>
@@ -1432,7 +1432,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function initHomeCharts() {
-  var labels   = ["Aug 13", "Aug 18", "Aug 25", "Sep 1", "Sep 8", "Sep 15", "Sep 22", "Sep 29", "Oct 6", "Oct 13", "Oct 20", "Oct 27", "Nov 3", "Nov 10", "Nov 17", "Nov 24", "Dec 1", "Dec 8", "Dec 15", "Dec 22", "Dec 29", "Jan 5", "Jan 12", "Jan 19", "Jan 26", "Feb 2", "Feb 9", "Feb 16", "Feb 23", "Mar 2", "Mar 9", "Mar 16", "Mar 23", "Mar 30", "Apr 6", "Apr 8"];
+  var labels   = ["Aug 13", "Aug 18", "Aug 25", "Sep 1", "Sep 8", "Sep 15", "Sep 22", "Sep 29", "Oct 6", "Oct 13", "Oct 20", "Oct 27", "Nov 3", "Nov 10", "Nov 17", "Nov 24", "Dec 1", "Dec 8", "Dec 15", "Dec 22", "Dec 29", "Jan 5", "Jan 12", "Jan 19", "Jan 26", "Feb 2", "Feb 9", "Feb 16", "Feb 23", "Mar 2", "Mar 9", "Mar 16", "Mar 23", "Mar 30", "Apr 6", "Apr 10"];
   var dataGP2  = [0, 1, 1, 1, 1, 1, 2, 4, 5, 7, 8, 10, 10, 14, 19, 26, 26, 31, 38, 42, 42, 43, 45, 48, 55, 59, 61, 68, 74, 76, 79, 81, 92, 99, 103, 109];
   var dataP1   = [5, 10, 10, 16, 18, 23, 24, 29, 32, 34, 34, 38, 41, 52, 63, 66, 66, 69, 66, 66, 66, 69, 69, 68, 63, 61, 66, 63, 60, 60, 57, 55, 47, 44, 41, 45];
   if (!labels.length || typeof Chart === 'undefined') return;
