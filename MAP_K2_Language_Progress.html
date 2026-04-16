@@ -8,7 +8,39 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
        background: #f1f5f9; color: #1e293b; }
+th { transition: background .15s; }
+th:hover { background: #16305a !important; }
 </style>
+<script>
+const _sortState = {};
+function sortTable(tid, th) {
+  const table = document.getElementById(tid);
+  const ths   = Array.from(th.parentElement.children);
+  const col   = ths.indexOf(th);
+  const key   = tid + ':' + col;
+  const asc   = _sortState[key] !== true;
+  _sortState[key] = asc;
+
+  ths.forEach(h => {
+    const sp = h.querySelector('span');
+    if (sp) sp.textContent = ' ⇅';
+  });
+  const sp = th.querySelector('span');
+  if (sp) sp.textContent = asc ? ' ▲' : ' ▼';
+
+  const tbody = table.querySelector('tbody');
+  const rows  = Array.from(tbody.querySelectorAll('tr'));
+  rows.sort((a, b) => {
+    const ca = a.children[col]?.innerText.trim() ?? '';
+    const cb = b.children[col]?.innerText.trim() ?? '';
+    const na = parseFloat(ca), nb = parseFloat(cb);
+    const nums = !isNaN(na) && !isNaN(nb);
+    const cmp  = nums ? na - nb : ca.localeCompare(cb);
+    return asc ? cmp : -cmp;
+  });
+  rows.forEach(r => tbody.appendChild(r));
+}
+</script>
 </head>
 <body>
 
@@ -68,84 +100,110 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-
     accuracy in Language since Aug 13, 2025.
   </div>
 
-  <div style="margin-bottom:36px">
-  <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
-    <div style="width:38px;height:38px;border-radius:50%;background:#dcfce7;
-                display:flex;align-items:center;justify-content:center;font-size:1.2rem;
-                border:2px solid #16a34a">✅</div>
-    <div>
-      <div style="font-size:1rem;font-weight:700;color:#1e293b">Target Achieved</div>
-      <div style="font-size:.8rem;color:#64748b">18 students</div>
+  <details open style="margin-bottom:20px;border-radius:10px;overflow:hidden;
+                        box-shadow:0 1px 3px rgba(0,0,0,.07)">
+  <summary style="display:flex;align-items:center;gap:12px;padding:14px 18px;
+                  background:white;cursor:pointer;list-style:none;user-select:none;
+                  border-left:4px solid #16a34a">
+    <div style="width:34px;height:34px;border-radius:50%;background:#dcfce7;
+                display:flex;align-items:center;justify-content:center;font-size:1.1rem;
+                border:2px solid #16a34a;flex-shrink:0">✅</div>
+    <div style="flex:1">
+      <div style="font-size:.95rem;font-weight:700;color:#1e293b">Target Achieved</div>
+      <div style="font-size:.78rem;color:#64748b">18 students</div>
     </div>
-  </div>
-  <div style="overflow:auto;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.08)">
-<table style="width:100%;border-collapse:collapse;font-size:.875rem;background:white">
+    <div style="font-size:.75rem;color:#94a3b8;padding-right:4px">click to expand/collapse</div>
+  </summary>
+  <div style="background:white;border-top:1px solid #f1f5f9">
+    <div style="overflow:auto;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.08)">
+<table id="ltbl1" style="width:100%;border-collapse:collapse;font-size:.875rem;background:white">
   <thead><tr style="background:#1e3a5f;color:white">
-    <th style="padding:10px 14px;text-align:left;font-weight:600">Student</th>
-    <th style="padding:10px 14px;text-align:left;font-weight:600">Campus</th>
-    <th style="padding:10px 14px;text-align:center;font-weight:600">MAP Target</th>
-    <th style="padding:10px 14px;text-align:center;font-weight:600">Current HMG</th>
+    <th onclick="sortTable('ltbl1',this)" style="padding:10px 14px;text-align:left;font-weight:600;cursor:pointer;white-space:nowrap;user-select:none">Student <span style="opacity:.5;font-size:.7rem">⇅</span></th> <th onclick="sortTable('ltbl1',this)" style="padding:10px 14px;text-align:left;font-weight:600;cursor:pointer;white-space:nowrap;user-select:none">Campus <span style="opacity:.5;font-size:.7rem">⇅</span></th> <th onclick="sortTable('ltbl1',this)" style="padding:10px 14px;text-align:center;font-weight:600;cursor:pointer;white-space:nowrap;user-select:none">MAP Target <span style="opacity:.5;font-size:.7rem">⇅</span></th> <th onclick="sortTable('ltbl1',this)" style="padding:10px 14px;text-align:center;font-weight:600;cursor:pointer;white-space:nowrap;user-select:none">Current HMG <span style="opacity:.5;font-size:.7rem">⇅</span></th>
+    
   </tr></thead>
-  <tbody><tr style="border-bottom:1px solid #f1f5f9"><td style="padding:9px 14px">Blake Price</td><td style="padding:9px 14px;color:#64748b">Alpha School Austin</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td></tr><tr style="border-bottom:1px solid #f1f5f9"><td style="padding:9px 14px">Saachi Sharma</td><td style="padding:9px 14px;color:#64748b">Alpha School Austin</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td><td style="padding:9px 14px;text-align:center;font-weight:600">3rd</td></tr><tr style="border-bottom:1px solid #f1f5f9"><td style="padding:9px 14px">Olivia Wojtowicz</td><td style="padding:9px 14px;color:#64748b">Alpha School Lake Forest</td><td style="padding:9px 14px;text-align:center;font-weight:600">1st</td><td style="padding:9px 14px;text-align:center;font-weight:600">1st</td></tr><tr style="border-bottom:1px solid #f1f5f9"><td style="padding:9px 14px">Magnus Liodden</td><td style="padding:9px 14px;color:#64748b">Alpha School Miami</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td></tr><tr style="border-bottom:1px solid #f1f5f9"><td style="padding:9px 14px">Adriana D&#x27;Anieri</td><td style="padding:9px 14px;color:#64748b">Alpha School Palm Beach</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td><td style="padding:9px 14px;text-align:center;font-weight:600">3rd</td></tr><tr style="border-bottom:1px solid #f1f5f9"><td style="padding:9px 14px">Donny Warm</td><td style="padding:9px 14px;color:#64748b">Alpha School Santa Barbara</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td><td style="padding:9px 14px;text-align:center;font-weight:600">4th</td></tr><tr style="border-bottom:1px solid #f1f5f9"><td style="padding:9px 14px">Carter Tinkler</td><td style="padding:9px 14px;color:#64748b">Alpha School Scottsdale</td><td style="padding:9px 14px;text-align:center;font-weight:600">1st</td><td style="padding:9px 14px;text-align:center;font-weight:600">1st</td></tr><tr style="border-bottom:1px solid #f1f5f9"><td style="padding:9px 14px">Wells Lindsley</td><td style="padding:9px 14px;color:#64748b">Alpha School Scottsdale</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td></tr><tr style="border-bottom:1px solid #f1f5f9"><td style="padding:9px 14px">Mebin Timilsina</td><td style="padding:9px 14px;color:#64748b">Montessorium Cedar Park</td><td style="padding:9px 14px;text-align:center;font-weight:600">1st</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td></tr><tr style="border-bottom:1px solid #f1f5f9"><td style="padding:9px 14px">Zander Halili</td><td style="padding:9px 14px;color:#64748b">Montessorium Cedar Park</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td></tr><tr style="border-bottom:1px solid #f1f5f9"><td style="padding:9px 14px">Orion Lira</td><td style="padding:9px 14px;color:#64748b">Nova Academy Bastrop</td><td style="padding:9px 14px;text-align:center;font-weight:600">1st</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td></tr><tr style="border-bottom:1px solid #f1f5f9"><td style="padding:9px 14px">Emmett Escamilla</td><td style="padding:9px 14px;color:#64748b">Strata</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td></tr><tr style="border-bottom:1px solid #f1f5f9"><td style="padding:9px 14px">Jackson Bulderbergs</td><td style="padding:9px 14px;color:#64748b">Strata</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td></tr><tr style="border-bottom:1px solid #f1f5f9"><td style="padding:9px 14px">Lukkas Powao</td><td style="padding:9px 14px;color:#64748b">Strata</td><td style="padding:9px 14px;text-align:center;font-weight:600">K</td><td style="padding:9px 14px;text-align:center;font-weight:600">K</td></tr><tr style="border-bottom:1px solid #f1f5f9"><td style="padding:9px 14px">Corinne McGowan</td><td style="padding:9px 14px;color:#64748b">Texas Sports Academy</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td></tr><tr style="border-bottom:1px solid #f1f5f9"><td style="padding:9px 14px">Jay Lever</td><td style="padding:9px 14px;color:#64748b">Texas Sports Academy</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td></tr><tr style="border-bottom:1px solid #f1f5f9"><td style="padding:9px 14px">Lauren Harden</td><td style="padding:9px 14px;color:#64748b">Texas Sports Academy</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td><td style="padding:9px 14px;text-align:center;font-weight:600">3rd</td></tr><tr style="border-bottom:1px solid #f1f5f9"><td style="padding:9px 14px">Omar Ibarra</td><td style="padding:9px 14px;color:#64748b">Texas Sports Academy</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td></tr></tbody>
+  <tbody><tr style="border-bottom:1px solid #f1f5f9"><td style="padding:9px 14px;font-weight:500">Blake Price</td><td style="padding:9px 14px;color:#64748b">Alpha School Austin</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td></tr><tr style="border-bottom:1px solid #f1f5f9"><td style="padding:9px 14px;font-weight:500">Saachi Sharma</td><td style="padding:9px 14px;color:#64748b">Alpha School Austin</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td><td style="padding:9px 14px;text-align:center;font-weight:600">3rd</td></tr><tr style="border-bottom:1px solid #f1f5f9"><td style="padding:9px 14px;font-weight:500">Olivia Wojtowicz</td><td style="padding:9px 14px;color:#64748b">Alpha School Lake Forest</td><td style="padding:9px 14px;text-align:center;font-weight:600">1st</td><td style="padding:9px 14px;text-align:center;font-weight:600">1st</td></tr><tr style="border-bottom:1px solid #f1f5f9"><td style="padding:9px 14px;font-weight:500">Magnus Liodden</td><td style="padding:9px 14px;color:#64748b">Alpha School Miami</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td></tr><tr style="border-bottom:1px solid #f1f5f9"><td style="padding:9px 14px;font-weight:500">Adriana D&#x27;Anieri</td><td style="padding:9px 14px;color:#64748b">Alpha School Palm Beach</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td><td style="padding:9px 14px;text-align:center;font-weight:600">3rd</td></tr><tr style="border-bottom:1px solid #f1f5f9"><td style="padding:9px 14px;font-weight:500">Donny Warm</td><td style="padding:9px 14px;color:#64748b">Alpha School Santa Barbara</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td><td style="padding:9px 14px;text-align:center;font-weight:600">4th</td></tr><tr style="border-bottom:1px solid #f1f5f9"><td style="padding:9px 14px;font-weight:500">Carter Tinkler</td><td style="padding:9px 14px;color:#64748b">Alpha School Scottsdale</td><td style="padding:9px 14px;text-align:center;font-weight:600">1st</td><td style="padding:9px 14px;text-align:center;font-weight:600">1st</td></tr><tr style="border-bottom:1px solid #f1f5f9"><td style="padding:9px 14px;font-weight:500">Wells Lindsley</td><td style="padding:9px 14px;color:#64748b">Alpha School Scottsdale</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td></tr><tr style="border-bottom:1px solid #f1f5f9"><td style="padding:9px 14px;font-weight:500">Mebin Timilsina</td><td style="padding:9px 14px;color:#64748b">Montessorium Cedar Park</td><td style="padding:9px 14px;text-align:center;font-weight:600">1st</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td></tr><tr style="border-bottom:1px solid #f1f5f9"><td style="padding:9px 14px;font-weight:500">Zander Halili</td><td style="padding:9px 14px;color:#64748b">Montessorium Cedar Park</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td></tr><tr style="border-bottom:1px solid #f1f5f9"><td style="padding:9px 14px;font-weight:500">Orion Lira</td><td style="padding:9px 14px;color:#64748b">Nova Academy Bastrop</td><td style="padding:9px 14px;text-align:center;font-weight:600">1st</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td></tr><tr style="border-bottom:1px solid #f1f5f9"><td style="padding:9px 14px;font-weight:500">Emmett Escamilla</td><td style="padding:9px 14px;color:#64748b">Strata</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td></tr><tr style="border-bottom:1px solid #f1f5f9"><td style="padding:9px 14px;font-weight:500">Jackson Bulderbergs</td><td style="padding:9px 14px;color:#64748b">Strata</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td></tr><tr style="border-bottom:1px solid #f1f5f9"><td style="padding:9px 14px;font-weight:500">Lukkas Powao</td><td style="padding:9px 14px;color:#64748b">Strata</td><td style="padding:9px 14px;text-align:center;font-weight:600">K</td><td style="padding:9px 14px;text-align:center;font-weight:600">K</td></tr><tr style="border-bottom:1px solid #f1f5f9"><td style="padding:9px 14px;font-weight:500">Corinne McGowan</td><td style="padding:9px 14px;color:#64748b">Texas Sports Academy</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td></tr><tr style="border-bottom:1px solid #f1f5f9"><td style="padding:9px 14px;font-weight:500">Jay Lever</td><td style="padding:9px 14px;color:#64748b">Texas Sports Academy</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td></tr><tr style="border-bottom:1px solid #f1f5f9"><td style="padding:9px 14px;font-weight:500">Lauren Harden</td><td style="padding:9px 14px;color:#64748b">Texas Sports Academy</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td><td style="padding:9px 14px;text-align:center;font-weight:600">3rd</td></tr><tr style="border-bottom:1px solid #f1f5f9"><td style="padding:9px 14px;font-weight:500">Omar Ibarra</td><td style="padding:9px 14px;color:#64748b">Texas Sports Academy</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td></tr></tbody>
 </table></div>
-</div>
-  <div style="margin-bottom:36px">
-  <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
-    <div style="width:38px;height:38px;border-radius:50%;background:#fef3c7;
-                display:flex;align-items:center;justify-content:center;font-size:1.2rem;
-                border:2px solid #d97706">⚡</div>
-    <div>
-      <div style="font-size:1rem;font-weight:700;color:#1e293b">1 Grade Behind</div>
-      <div style="font-size:.8rem;color:#64748b">2 students</div>
-    </div>
   </div>
-  <div style="overflow:auto;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.08)">
-<table style="width:100%;border-collapse:collapse;font-size:.875rem;background:white">
+</details>
+  <details open style="margin-bottom:20px;border-radius:10px;overflow:hidden;
+                        box-shadow:0 1px 3px rgba(0,0,0,.07)">
+  <summary style="display:flex;align-items:center;gap:12px;padding:14px 18px;
+                  background:white;cursor:pointer;list-style:none;user-select:none;
+                  border-left:4px solid #d97706">
+    <div style="width:34px;height:34px;border-radius:50%;background:#fef3c7;
+                display:flex;align-items:center;justify-content:center;font-size:1.1rem;
+                border:2px solid #d97706;flex-shrink:0">⚡</div>
+    <div style="flex:1">
+      <div style="font-size:.95rem;font-weight:700;color:#1e293b">1 Grade Behind</div>
+      <div style="font-size:.78rem;color:#64748b">2 students</div>
+    </div>
+    <div style="font-size:.75rem;color:#94a3b8;padding-right:4px">click to expand/collapse</div>
+  </summary>
+  <div style="background:white;border-top:1px solid #f1f5f9">
+    <div style="overflow:auto;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.08)">
+<table id="ltbl2" style="width:100%;border-collapse:collapse;font-size:.875rem;background:white">
   <thead><tr style="background:#1e3a5f;color:white">
-    <th style="padding:10px 14px;text-align:left;font-weight:600">Student</th>
-    <th style="padding:10px 14px;text-align:left;font-weight:600">Campus</th>
-    <th style="padding:10px 14px;text-align:center;font-weight:600">MAP Target</th>
-    <th style="padding:10px 14px;text-align:center;font-weight:600">Current HMG</th>
+    <th onclick="sortTable('ltbl2',this)" style="padding:10px 14px;text-align:left;font-weight:600;cursor:pointer;white-space:nowrap;user-select:none">Student <span style="opacity:.5;font-size:.7rem">⇅</span></th> <th onclick="sortTable('ltbl2',this)" style="padding:10px 14px;text-align:left;font-weight:600;cursor:pointer;white-space:nowrap;user-select:none">Campus <span style="opacity:.5;font-size:.7rem">⇅</span></th> <th onclick="sortTable('ltbl2',this)" style="padding:10px 14px;text-align:center;font-weight:600;cursor:pointer;white-space:nowrap;user-select:none">MAP Target <span style="opacity:.5;font-size:.7rem">⇅</span></th> <th onclick="sortTable('ltbl2',this)" style="padding:10px 14px;text-align:center;font-weight:600;cursor:pointer;white-space:nowrap;user-select:none">Current HMG <span style="opacity:.5;font-size:.7rem">⇅</span></th>
+    <th onclick="sortTable('ltbl2',this)" style="padding:10px 14px;text-align:center;font-weight:600;cursor:pointer;white-space:nowrap;user-select:none">XP to Test <span style="opacity:.5;font-size:.7rem">⇅</span></th>
   </tr></thead>
-  <tbody><tr style="border-bottom:1px solid #f1f5f9"><td style="padding:9px 14px">Jace Guilarte</td><td style="padding:9px 14px;color:#64748b">Alpha School Miami</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td><td style="padding:9px 14px;text-align:center;font-weight:600">1st</td></tr><tr style="border-bottom:1px solid #f1f5f9"><td style="padding:9px 14px">Zara Enayati</td><td style="padding:9px 14px;color:#64748b">Montessorium Cedar Park</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td><td style="padding:9px 14px;text-align:center;font-weight:600">1st</td></tr></tbody>
+  <tbody><tr style="border-bottom:1px solid #f1f5f9"><td style="padding:9px 14px;font-weight:500">Jace Guilarte</td><td style="padding:9px 14px;color:#64748b">Alpha School Miami</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td><td style="padding:9px 14px;text-align:center;font-weight:600">1st</td><td style="padding:9px 14px;text-align:center"><span style="background:#dcfce7;color:#166534;padding:3px 10px;border-radius:99px;font-size:.75rem;font-weight:600;white-space:nowrap;display:inline-block">Test Assigned</span></td></tr><tr style="border-bottom:1px solid #f1f5f9"><td style="padding:9px 14px;font-weight:500">Zara Enayati</td><td style="padding:9px 14px;color:#64748b">Montessorium Cedar Park</td><td style="padding:9px 14px;text-align:center;font-weight:600">2nd</td><td style="padding:9px 14px;text-align:center;font-weight:600">1st</td><td style="padding:9px 14px;text-align:center"><span style="background:#dcfce7;color:#166534;padding:3px 10px;border-radius:99px;font-size:.75rem;font-weight:600;white-space:nowrap;display:inline-block">Test Assigned</span></td></tr></tbody>
 </table></div>
-</div>
-  <div style="margin-bottom:36px">
-  <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
-    <div style="width:38px;height:38px;border-radius:50%;background:#ffedd5;
-                display:flex;align-items:center;justify-content:center;font-size:1.2rem;
-                border:2px solid #ea580c">⚠️</div>
-    <div>
-      <div style="font-size:1rem;font-weight:700;color:#1e293b">2 Grades Behind</div>
-      <div style="font-size:.8rem;color:#64748b">0 students</div>
-    </div>
   </div>
-  <p style="color:#9ca3af;padding:16px;text-align:center">No students in this group.</p>
-</div>
-  <div style="margin-bottom:36px">
-  <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
-    <div style="width:38px;height:38px;border-radius:50%;background:#fee2e2;
-                display:flex;align-items:center;justify-content:center;font-size:1.2rem;
-                border:2px solid #dc2626">🚨</div>
-    <div>
-      <div style="font-size:1rem;font-weight:700;color:#1e293b">3+ Grades Behind</div>
-      <div style="font-size:.8rem;color:#64748b">0 students</div>
+</details>
+  <details open style="margin-bottom:20px;border-radius:10px;overflow:hidden;
+                        box-shadow:0 1px 3px rgba(0,0,0,.07)">
+  <summary style="display:flex;align-items:center;gap:12px;padding:14px 18px;
+                  background:white;cursor:pointer;list-style:none;user-select:none;
+                  border-left:4px solid #ea580c">
+    <div style="width:34px;height:34px;border-radius:50%;background:#ffedd5;
+                display:flex;align-items:center;justify-content:center;font-size:1.1rem;
+                border:2px solid #ea580c;flex-shrink:0">⚠️</div>
+    <div style="flex:1">
+      <div style="font-size:.95rem;font-weight:700;color:#1e293b">2 Grades Behind</div>
+      <div style="font-size:.78rem;color:#64748b">0 students</div>
     </div>
+    <div style="font-size:.75rem;color:#94a3b8;padding-right:4px">click to expand/collapse</div>
+  </summary>
+  <div style="background:white;border-top:1px solid #f1f5f9">
+    <p style="color:#9ca3af;padding:16px;text-align:center">No students in this group.</p>
   </div>
-  <p style="color:#9ca3af;padding:16px;text-align:center">No students in this group.</p>
-</div>
-  <div style="margin-bottom:36px">
-  <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
-    <div style="width:38px;height:38px;border-radius:50%;background:#f1f5f9;
-                display:flex;align-items:center;justify-content:center;font-size:1.2rem;
-                border:2px solid #6b7280">❓</div>
-    <div>
-      <div style="font-size:1rem;font-weight:700;color:#1e293b">No Mastery Data</div>
-      <div style="font-size:.8rem;color:#64748b">0 students</div>
+</details>
+  <details open style="margin-bottom:20px;border-radius:10px;overflow:hidden;
+                        box-shadow:0 1px 3px rgba(0,0,0,.07)">
+  <summary style="display:flex;align-items:center;gap:12px;padding:14px 18px;
+                  background:white;cursor:pointer;list-style:none;user-select:none;
+                  border-left:4px solid #dc2626">
+    <div style="width:34px;height:34px;border-radius:50%;background:#fee2e2;
+                display:flex;align-items:center;justify-content:center;font-size:1.1rem;
+                border:2px solid #dc2626;flex-shrink:0">🚨</div>
+    <div style="flex:1">
+      <div style="font-size:.95rem;font-weight:700;color:#1e293b">3+ Grades Behind</div>
+      <div style="font-size:.78rem;color:#64748b">0 students</div>
     </div>
+    <div style="font-size:.75rem;color:#94a3b8;padding-right:4px">click to expand/collapse</div>
+  </summary>
+  <div style="background:white;border-top:1px solid #f1f5f9">
+    <p style="color:#9ca3af;padding:16px;text-align:center">No students in this group.</p>
   </div>
-  <p style="color:#9ca3af;padding:16px;text-align:center">No students in this group.</p>
-</div>
+</details>
+  <details open style="margin-bottom:20px;border-radius:10px;overflow:hidden;
+                        box-shadow:0 1px 3px rgba(0,0,0,.07)">
+  <summary style="display:flex;align-items:center;gap:12px;padding:14px 18px;
+                  background:white;cursor:pointer;list-style:none;user-select:none;
+                  border-left:4px solid #6b7280">
+    <div style="width:34px;height:34px;border-radius:50%;background:#f1f5f9;
+                display:flex;align-items:center;justify-content:center;font-size:1.1rem;
+                border:2px solid #6b7280;flex-shrink:0">❓</div>
+    <div style="flex:1">
+      <div style="font-size:.95rem;font-weight:700;color:#1e293b">No Mastery Data</div>
+      <div style="font-size:.78rem;color:#64748b">0 students</div>
+    </div>
+    <div style="font-size:.75rem;color:#94a3b8;padding-right:4px">click to expand/collapse</div>
+  </summary>
+  <div style="background:white;border-top:1px solid #f1f5f9">
+    <p style="color:#9ca3af;padding:16px;text-align:center">No students in this group.</p>
+  </div>
+</details>
 
 </div>
 </body>
